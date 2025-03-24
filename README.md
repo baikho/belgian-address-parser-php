@@ -1,4 +1,9 @@
 # belgian-address-parser-php
+
+[![Latest Stable Version](https://poser.pugx.org/baikho/belgian-address-parser-php/v/stable)](https://packagist.org/packages/baikho/belgian-address-parser-php)
+[![Total Downloads](https://poser.pugx.org/baikho/belgian-address-parser-php/downloads)](https://packagist.org/packages/baikho/belgian-address-parser-php)
+[![License](https://poser.pugx.org/baikho/belgian-address-parser-php/license)](https://packagist.org/packages/baikho/belgian-address-parser-php)
+
 A Belgian address parser library in PHP
 
 ## Requirements
@@ -19,12 +24,7 @@ composer require baikho/belgian-address-parser-php
 $parser = new \Baikho\BelgianAddressParser\Parser();
 
 // Parse an address
-$address = "
-Andreas Vesaliusstraat 47
-3000 Leuven
-België";
-
-$parsed = $parser->parse($address);
+$parsed = $parser->parse('Andreas Vesaliusstraat 47, 3000 Leuven, België');
 
 // Output the parsed components
 print_r($parsed);
