@@ -1,10 +1,12 @@
-# belgian-address-parser-php
+# Belgian Address Parser PHP
 
-[![Latest Stable Version](https://poser.pugx.org/baikho/belgian-address-parser-php/v/stable)](https://packagist.org/packages/baikho/belgian-address-parser-php)
-[![Total Downloads](https://poser.pugx.org/baikho/belgian-address-parser-php/downloads)](https://packagist.org/packages/baikho/belgian-address-parser-php)
-[![License](https://poser.pugx.org/baikho/belgian-address-parser-php/license)](https://packagist.org/packages/baikho/belgian-address-parser-php)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/baikho/belgian-address-parser-php.svg)](https://packagist.org/packages/baikho/belgian-address-parser-php)
+[![Total Downloads](https://img.shields.io/packagist/dt/baikho/belgian-address-parser-php.svg)](https://packagist.org/packages/baikho/belgian-address-parser-php)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/baikho/belgian-address-parser-php.svg)](https://github.com/baikho/belgian-address-parser-php/issues)
+[![GitHub stars](https://img.shields.io/github/stars/baikho/belgian-address-parser-php.svg)](https://github.com/baikho/belgian-address-parser-php/stargazers)
 
-A Belgian address parser library in PHP
+A Belgian address parser library in PHP.
 
 ## Requirements
 
