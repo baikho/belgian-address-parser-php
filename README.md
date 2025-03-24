@@ -28,6 +28,16 @@ $parsed = $parser->parse('Andreas Vesaliusstraat 47, 3000 Leuven, België');
 
 // Output the parsed components
 print_r($parsed);
+Array
+(
+    [recipient] => 
+    [street] => Andreas Vesaliusstraat
+    [number] => 47
+    [box] => 
+    [postal_code] => 3000
+    [city] => Leuven
+    [country] => BELGIUM
+)
 
 // Validate the address
 $validation = $parser->validate($parsed);
