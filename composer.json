@@ -1,0 +1,29 @@
+{
+    "name": "baikho/belgian-address-parser-php",
+    "description": "A Belgian address parser library in PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sang Lostrie",
+            "email": "sang.lostrie@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Baikho\\BelgianAddressParser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Baikho\\BelgianAddressParser\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable"
+}
