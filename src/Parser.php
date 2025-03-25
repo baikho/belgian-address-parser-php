@@ -34,13 +34,34 @@ class Parser
             'country' => 'BELGIUM'
         ];
 
-        // Determine if the address contains "Belgium" in any form and remove it
-        $last_line = isset($lines[count($lines) - 1]) ? strtoupper($lines[count($lines) - 1]) : '';
-        $country_variants = ['BELGIUM', 'BELGIQUE', 'BELGIË', 'BELGIEN'];
+        // Country detection: check if last line is a country or ends with one
+        $last_line_index = count($lines) - 1;
+        $last_line = isset($lines[$last_line_index]) ? $lines[$last_line_index] : '';
 
+        // Prioritize local variants first
+        $country_variants = ['België', 'Belgique', 'Belgien', 'Belgium'];
+
+        // Create a strict regex to match these variants
         foreach ($country_variants as $country) {
-            if (strpos($last_line, $country) !== false) {
-                $result['country'] = array_pop($lines);
+            // \b for word boundary, preg_quote for safe literal match
+            if (preg_match('/\b' . preg_quote($country, '/') . '\b/iu', $last_line, $match)) {
+                $matched_country = $match[0]; // Actual input casing
+
+                // Case 1: entire line is just the country
+                if (strcasecmp(trim($last_line), $country) === 0) {
+                    $result['country'] = $matched_country;
+                    array_pop($lines);
+                }
+                // Case 2: country is at the end of the line
+                elseif (preg_match('/,?\s*' . preg_quote($country, '/') . '\s*$/iu', $last_line)) {
+                    $result['country'] = $matched_country;
+                    $lines[$last_line_index] = trim(preg_replace(
+                        '/,?\s*' . preg_quote($country, '/') . '\s*$/iu',
+                        '',
+                        $last_line
+                    ));
+                }
+
                 break;
             }
         }

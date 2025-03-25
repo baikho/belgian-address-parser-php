@@ -54,6 +54,30 @@ class ParserTest extends TestCase
         $this->assertEquals('Belgium', $parsed['country']);
     }
 
+    public function testParsingSingleLineAddressWithBelgie()
+    {
+        $address = "Andreas Vesaliusstraat 47, 3000 Leuven, België";
+        $parsed = $this->parser->parse($address);
+    
+        $this->assertEquals('Andreas Vesaliusstraat', $parsed['street']);
+        $this->assertEquals('47', $parsed['number']);
+        $this->assertEquals('3000', $parsed['postal_code']);
+        $this->assertEquals('Leuven', $parsed['city']);
+        $this->assertEquals('België', $parsed['country']);
+    }
+
+    public function testParsingAddressWithoutCountry()
+    {
+        $address = "Jan Van Eyckstraat 5\n9000 Gent";
+        $parsed = $this->parser->parse($address);
+    
+        $this->assertEquals('Jan Van Eyckstraat', $parsed['street']);
+        $this->assertEquals('5', $parsed['number']);
+        $this->assertEquals('9000', $parsed['postal_code']);
+        $this->assertEquals('Gent', $parsed['city']);
+        $this->assertEquals('BELGIUM', $parsed['country']);
+    }
+
     public function testFormattingAddress()
     {
         $addressComponents = [
