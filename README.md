@@ -38,7 +38,7 @@ Array
     [box] => 
     [postal_code] => 3000
     [city] => Leuven
-    [country] => BELGIUM
+    [country] => België
 )
 
 // Validate the address
